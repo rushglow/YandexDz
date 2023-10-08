@@ -20,9 +20,7 @@ class ToDoAdapter(private val dataSet:Array<ToDoItem>): RecyclerView.Adapter<ToD
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         TODO("Not yet implemented")
-        fun fak(){
 
-        }
     }
 }
 
