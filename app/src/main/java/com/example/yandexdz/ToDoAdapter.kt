@@ -1,25 +1,35 @@
 package com.example.yandexdz
 
+import android.animation.LayoutTransition
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-class ToDoAdapter(private val dataSet:Array<ToDoItem>): RecyclerView.Adapter<ToDoAdapter.MyViewHolder>() {
-    class MyViewHolder(view: View): RecyclerView.ViewHolder(view){
-
+class ToDoAdapter(private val toDoItemArray:Array<ToDoItem>): RecyclerView.Adapter<ToDoAdapter.MyViewHolder>() {
+    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        val toDoTextView: TextView = itemView.findViewById(R.id.to_do_text)
+        val dateTextView: TextView = itemView.findViewById(R.id.to_do_date)
+        val priorityImgView: ImageView = itemView.findViewById(R.id.priority)
+        val checkBox: ImageView = itemView.findViewById(R.id.checkbox_btn)
+        val infoImgBtn: ImageView = itemView.findViewById(R.id.info_btn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        TODO("Not yet implemented")
+        val itemView =
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.recycler_item, parent, false)
+        return MyViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return toDoItemArray.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.toDoTextView.text = text[position]
 
     }
 }
