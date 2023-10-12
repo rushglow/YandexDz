@@ -12,6 +12,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toDo_recycler: RecyclerView = findViewById(R.id.recyclerView)
         toDo_recycler.layoutManager = LinearLayoutManager(this)
-        toDo_recycler.adapter = ToDoAdapter(toDoItemArray)
+        toDo_recycler.adapter = ToDoAdapter(getList())
+    }
+    private fun getList():List<ToDoItem>{
+        lateinit var repos: ToDoItemsRepository
+        var listOfItems:List<ToDoItem> = repos.itemsRepository
+        return listOfItems
     }
 }

@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ToDoAdapter(private val toDoItemArray:Array<ToDoItem>): RecyclerView.Adapter<ToDoAdapter.MyViewHolder>() {
+class ToDoAdapter(private val toDoItemArray:List<ToDoItem>): RecyclerView.Adapter<ToDoAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val toDoTextView: TextView = itemView.findViewById(R.id.to_do_text)
         val dateTextView: TextView = itemView.findViewById(R.id.to_do_date)

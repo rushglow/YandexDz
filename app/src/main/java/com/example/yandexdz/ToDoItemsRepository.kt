@@ -1,14 +1,11 @@
 package com.example.yandexdz
 
-class ToDoItemsRepository : ArrayList<ToDoItem>() {
-    var itemList: ArrayList<ToDoItem> =
-    fun addNew(toDoItem: ToDoItem){
+import java.util.ArrayList
 
-        return toDoItem(1, true, "sad", 1)
+class ToDoItemsRepository() : ArrayList<ToDoItem>() {
+    var itemsRepository: MutableList<ToDoItem> = arrayListOf()
+    fun addItem(item: ToDoItem){
+        itemsRepository.add(item)
     }
 
-    private fun toDoItem(id: Int, done: Boolean, text: String, priority: Int): ToDoItem {
-
-        return TODO("Provide the return value")
-    }
 }
